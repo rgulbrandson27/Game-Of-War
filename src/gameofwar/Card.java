@@ -12,12 +12,6 @@ public class Card {
 		this.suit = suit;
 		this.rank = rank;
 	}
-	
-	public Card() {
-		String value; 
-		String suit;
-		int rank;
-	}
 
 	public String getValue() {
 		return value;
@@ -48,7 +42,7 @@ public class Card {
 		System.out.println(getValue() + " of " +  getSuit()); 
 	}
 
-	//   without the below toString method, the deck will print in this format:  gameofwar.Card@26f0a63f
+	//   note: without the below toString method, the deck will print in this format:  gameofwar.Card@26f0a63f
 	
 	public String toString() {
 		return value + " of " + suit;

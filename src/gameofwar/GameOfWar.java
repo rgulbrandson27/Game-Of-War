@@ -7,16 +7,10 @@ public class GameOfWar {
 
 	public static void main(String[] args) {
 	
-	Deck deck = new Deck();
-		//System.out.println(deck);	
-		deck.shuffle();
-		//System.out.println(deck);
-	
+
 	new GameOfWar().run(); 
 	}
 		private void run() {
-			
-			Deck deck = new Deck();
 		
 			announceGame();
 		
@@ -44,39 +38,36 @@ public class GameOfWar {
 //----------DEAL CARDS
 	
 	public void shuffleAndDealCards() {
-		Deck deck = new Deck();
-		deck.shuffle();
-		
-//		for(int i = 1; i <= 26; i++) {
-//			player1.getHand().add(deck.draw());
-		//	player10.getHand().add(deck.draw());
-
-		for (int index = 0; index <= deck.size(); index++) {
+	Deck deck = new Deck();
+	deck.shuffle();
+	
+		for (int index = 1; index <= 52; index++) {
 			if (index %2 == 0) {
 			player1.receiveDealtCard(deck);
-		System.out.println(player1.getHand());			//temporary - testing only
 			}	else 	{
 			player10.receiveDealtCard(deck);
-		System.out.println(player10.getHand());			//temporary - testing only	
 			}
 		}
-	
+		System.out.println(player1.getHand());			//use to see each player's hand
+		System.out.println(player10.getHand());			
 	}
+	
 //----------PLAY GAME
-
+	//Deck deck = new Deck();
 	private static void playGame() {
 	System.out.println("");
 	System.out.println("^^^^^^^^^^^^^^^^^^LET'S GO!^^^^^^^^^^^^^^^^^^^");
 	System.out.println("______________________________________________");
 	System.out.println("");
 
-
 	Card player1Card = player1.flipCard();
 	Card player10Card = player10.flipCard();
 	String player1Arrow =  "             1<<<-----------------";
 	String player10Arrow = "             ----------------->>>1";
 	String tieArrow = 	   "       0-----------------------0 ";
-	for (int i = 1; i <= 26; i++) {
+	
+	for (int i = 2; i <= 26; i++) {
+		
 		player1.flipCard();
 		player10.flipCard();
 		System.out.println("                    ROUND " + i + "  ");
