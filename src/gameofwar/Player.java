@@ -6,7 +6,7 @@ import java.util.List;
 public class Player {
 	private String name;
 	private List<Card> hand = new ArrayList<Card>();
-	private int score;		           					//auto defaults to 0
+	private int score;		    //auto defaults to 0
 	
 	public Player(String name) {		
 		this.name = name;
@@ -35,9 +35,7 @@ public class Player {
 	}
 	
 	public void receiveDealtCard(Deck deck)	{		   // used within the deal method in main class
-		Card card = deck.draw();
-		hand.add(card);
-		//getHand().add(deck.draw());
+		hand.add(deck.draw());	
 	}
 
 	public Card flipCard() {	      // player "plays" the card

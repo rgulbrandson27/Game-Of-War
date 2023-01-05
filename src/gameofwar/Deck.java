@@ -15,7 +15,7 @@ public class Deck extends ArrayList<Card> {
 		"Eight", "Nine", "Ten", "Jack", "Queen", "King", "Ace");
 
 	public Deck() {
-		for (int valuePos = 0; valuePos < values.size(); valuePos += 1) {
+		for (int valuePos = 0; valuePos < 13; valuePos += 1) {
 			int rank = valuePos + 2;
 			String value = values.get(valuePos);
 			
